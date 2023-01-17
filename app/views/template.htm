@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <!-- bootstrap-css -->
+  <link rel="stylesheet" href="assets/css/bootstrap/bootstrap.min.css">
+  <!-- tweaker css -->
+  <link rel="stylesheet" href="assets/css/stylesheet.css">
+  <!-- custom css -->
+  <check if="{{ @@CSS_PATH }}">
+    <link rel="stylesheet" href="{{ @@CSS_PATH }}">
+  </check>
+  
+  <title>MVC Starter Kit</title>
+</head>
+<body>
+ 
+  <!-- content -->
+  <div class="page-content">
+    <include href="{{ @content }}" />
+  </div>
+  <!-- ./content -->
+
+  <!-- jquery cdn -->
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js" integrity="sha256-/xUj+3OJU5yExlq6GSYGSHk7tPXikynS7ogEvDej/m4=" crossorigin="anonymous"></script>
+  <!-- bootstrap-js -->
+  <script src="assets/js/bootstrap/bootstrap.bundle.min.js" type="text/javascript"></script>
+  <!-- Chart.js -->
+  <check if="{{ @@ACTIVE_PAGE == 'statistics' }}">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/3.8.0/chart.min.js"></script>
+  </check>
+
+  <!-- custom js -->
+  <script src="assets/js/notification.js" type="text/javascript"></script>
+  <script src="assets/js/code.js" type="text/javascript"></script>
+  <check if="{{ @@JS_PATH }}">
+    <script src="{{ @@JS_PATH }}" type="text/javascript"></script>
+  </check>
+  
+</body>
+</html>
